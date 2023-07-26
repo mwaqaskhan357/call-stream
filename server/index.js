@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const io = new Server(process.env.PORT, {
   cors: true,
-  origins: ['localhost'],
+  origins: ['46.101.210.71'],
 });
 
 const emailToSocketIdMap = new Map();

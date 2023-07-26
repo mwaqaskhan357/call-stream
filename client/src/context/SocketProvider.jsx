@@ -18,12 +18,9 @@
 //   );
 // };
 
-
-
-import React, { createContext, useContext, useMemo, useState } from "react";
-import { io } from "socket.io-client";
+import React, { createContext, useContext, useMemo, useState } from 'react';
+import { io } from 'socket.io-client';
 const socketContext = createContext(null);
-
 
 export const useSocket = () => {
   const socket = useContext(socketContext);
@@ -31,14 +28,16 @@ export const useSocket = () => {
 };
 
 export const SocketProvider = (props) => {
-
-  const [callerId] =useState("690751")
+  const [callerId] = useState('690751');
   const socket = useMemo(
     () =>
       io(
-        "http://46.101.210.71:8000",
+        'http://46.101.210.71/api',
 
-        { transports: ["websocket", "polling", "flashsocket"],query:{callerId} }
+        {
+          transports: ['websocket', 'polling', 'flashsocket'],
+          query: { callerId },
+        }
       ),
     []
   );
