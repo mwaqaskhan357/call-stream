@@ -32,7 +32,7 @@ export const SocketProvider = (props) => {
   const socket = useMemo(
     () =>
       io(
-        'https://46.101.210.71/api',
+        'https://www.api.codewithmaster.com',
 
         {
           transports: ['websocket', 'polling', 'flashsocket'],
